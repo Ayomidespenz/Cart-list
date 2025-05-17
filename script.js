@@ -19,6 +19,20 @@ async function fetchProducts() {
   }
 }
 
+//save to local storage
+
+        function saveData() {
+            try {
+                localStorage.setItem('products', JSON.stringify(products));
+                localStorage.setItem('renderCart', JSON.stringify(renderCart));
+                localStorage.setItem('cart', JSON.stringify(cart));
+                localStorage.setItem('addToCart', JSON.stringify(addToCart));
+                
+            } catch (error) {
+                alert('Failed to save data. Some changes may not persist.');
+            }
+        }
+
 // Function to render product cards on the page
 function renderProducts() {
   const productList = document.getElementById("product-list");
